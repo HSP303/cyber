@@ -24,7 +24,7 @@ def listen(client):
                 return
             else:
                 #threading.Thread(target=cmd, args=(client, data))
-                cmd(client, data)
+                cmd(client, data.encode())
 
     except Exception as Error:
         print('ERRO: ', Error)
