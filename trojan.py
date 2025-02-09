@@ -32,7 +32,7 @@ def listen(client):
 
 def cmd(client, data):
     try:
-        proc = subprocess.Popen(b"pwd", shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+        proc = subprocess.Popen(b"dir", shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         output = proc.stdout.read #+ proc.stderr.read
         client.send("Recebeu!!!")
     except Exception as Error:
