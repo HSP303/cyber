@@ -34,7 +34,7 @@ def cmd(client, data):
     try:
         #proc = subprocess.Popen("dir", shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         #output = proc.stdout.read #+ proc.stderr.read
-        client.send(("Recebeu!!!").encode())
+        client.send(b"Recebeu!!!")
     except Exception as Error:
         print('ERROR: ', Error)
 
