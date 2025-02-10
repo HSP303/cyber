@@ -23,7 +23,7 @@ def listen(client):
             if data == '/exit':
                 return
             else:
-                threading.Thread(target=cmd, args=(client, data))
+                threading.Thread(target=cmd, args=(client, data)).start()
                 #cmd(client, data)
 
     except Exception as Error:
