@@ -4,7 +4,7 @@ import subprocess
 import threading
 
 IP = '192.168.0.109'
-PORT = 443
+PORT = 3333
 
 def connect(IP, PORT):
     try:
