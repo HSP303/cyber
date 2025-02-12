@@ -4,7 +4,7 @@ import subprocess
 import threading
 import os
 
-IP = '192.168.0.101'
+IP = '10.5.50.160'
 PORT = 3333
 
 def autorun():
